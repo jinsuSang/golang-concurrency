@@ -7,7 +7,8 @@
 
 ## Tucker
 
-| Date       | Content                                           | Link |
-| ---------- | ------------------------------------------------- | ---- |
-| 2021.09.07 | Go 동시성 기초 및 활용 - 고루틴, WaitGroup, Mutex |      |
+| Date       | Content                                           | Link                                                         |
+| ---------- | ------------------------------------------------- | ------------------------------------------------------------ |
+| 2021.09.13 | Go 동시성 기초 및 활용 - 채널, 컨텍스트           | [go](https://github.com/jinsuSang/golang-concurrency/blob/main/tucker-channel-context.md) |
+| 2021.09.07 | Go 동시성 기초 및 활용 - 고루틴, WaitGroup, Mutex | [go](https://github.com/jinsuSang/golang-concurrency/blob/main/tucker-goroutine.md) |
 
