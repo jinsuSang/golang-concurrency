@@ -6,8 +6,6 @@
 
 ## Todd McLeod
 
-
-
 ## Tucker
 
 | Date       | Content                                           | Link                                                         |

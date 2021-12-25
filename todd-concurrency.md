@@ -57,5 +57,49 @@ runtime.Gosched()
 
 - 사용에 유의해야 하며 특수한 저수준 응용 프로그램을 제외하고 동기화는 채널이나 동기화 패키지 기능을 수행하는 것이 좋습니다. 통신을 통해 메모리를 공유하고 메모리를 공유하여 통신하지 않습니다
 
-  
+
+### Race Condition
+
+```go
+package main
+
+import (
+	"fmt"
+	"runtime"
+	"sync"
+)
+
+func main() {
+	var wg sync.WaitGroup
+
+	num := 0
+	gs := 100
+	wg.Add(gs)
+
+	for i := 0; i < gs; i++ {
+		go func() {
+			v := num
+			runtime.Gosched()
+			v++
+			num = v
+			fmt.Println(num)
+			wg.Done()
+		}()
+	}
+
+	wg.Wait()
+	fmt.Println(num)
+	
+	// race condition
+	//1
+	//1
+	//7
+	//1
+	//2
+	//2
+	//2
+	//2
+```
+
+
 
